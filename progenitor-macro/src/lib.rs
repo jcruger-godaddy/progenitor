@@ -77,6 +77,7 @@ struct MacroSettings {
     tags: TagStyle,
     inner_type: Option<ParseWrapper<syn::Type>>,
     pre_hook: Option<ParseWrapper<ClosureOrPath>>,
+    pre_hook_async: Option<ParseWrapper<ClosureOrPath>>,
     post_hook: Option<ParseWrapper<ClosureOrPath>>,
     #[serde(default)]
     derives: Vec<ParseWrapper<syn::Path>>,
@@ -150,6 +151,7 @@ fn do_generate_api(item: TokenStream) -> Result<TokenStream, syn::Error> {
             tags,
             inner_type,
             pre_hook,
+            pre_hook_async,
             post_hook,
             derives,
             patch,
@@ -162,6 +164,9 @@ fn do_generate_api(item: TokenStream) -> Result<TokenStream, syn::Error> {
         });
         pre_hook
             .map(|pre_hook| settings.with_pre_hook(pre_hook.into_inner().0));
+        pre_hook_async.map(|pre_hook_async| {
+            settings.with_pre_hook_async(pre_hook_async.into_inner().0)
+        });
         post_hook
             .map(|post_hook| settings.with_post_hook(post_hook.into_inner().0));
 

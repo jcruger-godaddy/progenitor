@@ -70,7 +70,7 @@ impl Client {
         query.push(("if", if_.to_string()));
         query.push(("in", in_.to_string()));
         query.push(("use", use_.to_string()));
-        let request = self.client.get(url).query(&query).build()?;
+        let mut request = self.client.get(url).query(&query).build()?;
         let result = self.client.execute(request).await;
         let response = result?;
         match response.status().as_u16() {

@@ -13710,7 +13710,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&id.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -13762,7 +13762,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&id.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -13814,7 +13814,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&id.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -13866,7 +13866,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&id.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -13921,7 +13921,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&id.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -13973,7 +13973,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&id.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -14025,7 +14025,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&id.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -14077,7 +14077,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&id.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -14129,7 +14129,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&id.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -14181,7 +14181,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&id.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -14233,7 +14233,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&id.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -14285,7 +14285,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&id.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -14333,7 +14333,7 @@ pub mod builder {
             let Self { client, body } = self;
             let body = body.map_err(Error::InvalidRequest)?;
             let url = format!("{}/device/auth", client.baseurl,);
-            let request = client.client.post(url).form_urlencoded(&body)?.build()?;
+            let mut request = client.client.post(url).form_urlencoded(&body)?.build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -14375,7 +14375,7 @@ pub mod builder {
             let Self { client, body } = self;
             let body = body.map_err(Error::InvalidRequest)?;
             let url = format!("{}/device/confirm", client.baseurl,);
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -14423,7 +14423,7 @@ pub mod builder {
             let Self { client, body } = self;
             let body = body.map_err(Error::InvalidRequest)?;
             let url = format!("{}/device/token", client.baseurl,);
-            let request = client.client.post(url).form_urlencoded(&body)?.build()?;
+            let mut request = client.client.post(url).form_urlencoded(&body)?.build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -14509,7 +14509,7 @@ pub mod builder {
             if let Some(v) = &sort_by {
                 query.push(("sort_by", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -14608,7 +14608,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&rack_id.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -14700,7 +14700,7 @@ pub mod builder {
             if let Some(v) = &sort_by {
                 query.push(("sort_by", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -14799,7 +14799,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&sled_id.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -14891,7 +14891,7 @@ pub mod builder {
             if let Some(v) = &sort_by {
                 query.push(("sort_by", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -14986,7 +14986,7 @@ pub mod builder {
             let Self { client, body } = self;
             let body = body.map_err(Error::InvalidRequest)?;
             let url = format!("{}/images", client.baseurl,);
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -15038,7 +15038,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&image_name.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -15090,7 +15090,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&image_name.to_string()),
             );
-            let request = client.client.delete(url).build()?;
+            let mut request = client.client.delete(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -15182,7 +15182,7 @@ pub mod builder {
             if let Some(v) = &sort_by {
                 query.push(("sort_by", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -15277,7 +15277,7 @@ pub mod builder {
             let Self { client, body } = self;
             let body = body.map_err(Error::InvalidRequest)?;
             let url = format!("{}/ip-pools", client.baseurl,);
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -15329,7 +15329,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&pool_name.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -15398,7 +15398,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&pool_name.to_string()),
             );
-            let request = client.client.put(url).json(&body).build()?;
+            let mut request = client.client.put(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -15450,7 +15450,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&pool_name.to_string()),
             );
-            let request = client.client.delete(url).build()?;
+            let mut request = client.client.delete(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -15543,7 +15543,7 @@ pub mod builder {
             if let Some(v) = &page_token {
                 query.push(("page_token", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -15658,7 +15658,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&pool_name.to_string()),
             );
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -15727,7 +15727,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&pool_name.to_string()),
             );
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -15775,7 +15775,7 @@ pub mod builder {
             let Self { client, body } = self;
             let body = body.map_err(Error::InvalidRequest)?;
             let url = format!("{}/login", client.baseurl,);
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -15839,7 +15839,7 @@ pub mod builder {
                 encode_path(&silo_name.to_string()),
                 encode_path(&provider_name.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -15917,7 +15917,7 @@ pub mod builder {
                 encode_path(&silo_name.to_string()),
                 encode_path(&provider_name.to_string()),
             );
-            let request = client
+            let mut request = client
                 .client
                 .post(url)
                 .header(
@@ -15952,7 +15952,7 @@ pub mod builder {
         pub async fn send(self) -> Result<ResponseValue<ByteStream>, Error<ByteStream>> {
             let Self { client } = self;
             let url = format!("{}/logout", client.baseurl,);
-            let request = client.client.post(url).build()?;
+            let mut request = client.client.post(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -16038,7 +16038,7 @@ pub mod builder {
             if let Some(v) = &sort_by {
                 query.push(("sort_by", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -16133,7 +16133,7 @@ pub mod builder {
             let Self { client, body } = self;
             let body = body.map_err(Error::InvalidRequest)?;
             let url = format!("{}/organizations", client.baseurl,);
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -16188,7 +16188,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&organization_name.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -16257,7 +16257,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&organization_name.to_string()),
             );
-            let request = client.client.put(url).json(&body).build()?;
+            let mut request = client.client.put(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -16312,7 +16312,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&organization_name.to_string()),
             );
-            let request = client.client.delete(url).build()?;
+            let mut request = client.client.delete(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -16369,7 +16369,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&organization_name.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -16440,7 +16440,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&organization_name.to_string()),
             );
-            let request = client.client.put(url).json(&body).build()?;
+            let mut request = client.client.put(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -16551,7 +16551,7 @@ pub mod builder {
             if let Some(v) = &sort_by {
                 query.push(("sort_by", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -16669,7 +16669,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&organization_name.to_string()),
             );
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -16740,7 +16740,7 @@ pub mod builder {
                 encode_path(&organization_name.to_string()),
                 encode_path(&project_name.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -16825,7 +16825,7 @@ pub mod builder {
                 encode_path(&organization_name.to_string()),
                 encode_path(&project_name.to_string()),
             );
-            let request = client.client.put(url).json(&body).build()?;
+            let mut request = client.client.put(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -16896,7 +16896,7 @@ pub mod builder {
                 encode_path(&organization_name.to_string()),
                 encode_path(&project_name.to_string()),
             );
-            let request = client.client.delete(url).build()?;
+            let mut request = client.client.delete(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -17022,7 +17022,7 @@ pub mod builder {
             if let Some(v) = &sort_by {
                 query.push(("sort_by", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -17155,7 +17155,7 @@ pub mod builder {
                 encode_path(&organization_name.to_string()),
                 encode_path(&project_name.to_string()),
             );
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -17242,7 +17242,7 @@ pub mod builder {
                 encode_path(&project_name.to_string()),
                 encode_path(&disk_name.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -17329,7 +17329,7 @@ pub mod builder {
                 encode_path(&project_name.to_string()),
                 encode_path(&disk_name.to_string()),
             );
-            let request = client.client.delete(url).build()?;
+            let mut request = client.client.delete(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -17499,7 +17499,7 @@ pub mod builder {
             if let Some(v) = &start_time {
                 query.push(("start_time", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -17675,7 +17675,7 @@ pub mod builder {
             if let Some(v) = &sort_by {
                 query.push(("sort_by", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -17808,7 +17808,7 @@ pub mod builder {
                 encode_path(&organization_name.to_string()),
                 encode_path(&project_name.to_string()),
             );
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -17895,7 +17895,7 @@ pub mod builder {
                 encode_path(&project_name.to_string()),
                 encode_path(&image_name.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -17982,7 +17982,7 @@ pub mod builder {
                 encode_path(&project_name.to_string()),
                 encode_path(&image_name.to_string()),
             );
-            let request = client.client.delete(url).build()?;
+            let mut request = client.client.delete(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -18109,7 +18109,7 @@ pub mod builder {
             if let Some(v) = &sort_by {
                 query.push(("sort_by", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -18244,7 +18244,7 @@ pub mod builder {
                 encode_path(&organization_name.to_string()),
                 encode_path(&project_name.to_string()),
             );
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -18331,7 +18331,7 @@ pub mod builder {
                 encode_path(&project_name.to_string()),
                 encode_path(&instance_name.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -18418,7 +18418,7 @@ pub mod builder {
                 encode_path(&project_name.to_string()),
                 encode_path(&instance_name.to_string()),
             );
-            let request = client.client.delete(url).build()?;
+            let mut request = client.client.delete(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -18560,7 +18560,7 @@ pub mod builder {
             if let Some(v) = &sort_by {
                 query.push(("sort_by", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -18710,7 +18710,7 @@ pub mod builder {
                 encode_path(&project_name.to_string()),
                 encode_path(&instance_name.to_string()),
             );
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -18811,7 +18811,7 @@ pub mod builder {
                 encode_path(&project_name.to_string()),
                 encode_path(&instance_name.to_string()),
             );
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -18900,7 +18900,7 @@ pub mod builder {
                 encode_path(&project_name.to_string()),
                 encode_path(&instance_name.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -19001,7 +19001,7 @@ pub mod builder {
                 encode_path(&project_name.to_string()),
                 encode_path(&instance_name.to_string()),
             );
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -19144,7 +19144,7 @@ pub mod builder {
             if let Some(v) = &sort_by {
                 query.push(("sort_by", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -19296,7 +19296,7 @@ pub mod builder {
                 encode_path(&project_name.to_string()),
                 encode_path(&instance_name.to_string()),
             );
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -19400,7 +19400,7 @@ pub mod builder {
                 encode_path(&instance_name.to_string()),
                 encode_path(&interface_name.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -19518,7 +19518,7 @@ pub mod builder {
                 encode_path(&instance_name.to_string()),
                 encode_path(&interface_name.to_string()),
             );
-            let request = client.client.put(url).json(&body).build()?;
+            let mut request = client.client.put(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -19620,7 +19620,7 @@ pub mod builder {
                 encode_path(&instance_name.to_string()),
                 encode_path(&interface_name.to_string()),
             );
-            let request = client.client.delete(url).build()?;
+            let mut request = client.client.delete(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -19707,7 +19707,7 @@ pub mod builder {
                 encode_path(&project_name.to_string()),
                 encode_path(&instance_name.to_string()),
             );
-            let request = client.client.post(url).build()?;
+            let mut request = client.client.post(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -19851,7 +19851,7 @@ pub mod builder {
             if let Some(v) = &most_recent {
                 query.push(("most_recent", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -19938,7 +19938,7 @@ pub mod builder {
                 encode_path(&project_name.to_string()),
                 encode_path(&instance_name.to_string()),
             );
-            let request = client.client.post(url).build()?;
+            let mut request = client.client.post(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -20025,7 +20025,7 @@ pub mod builder {
                 encode_path(&project_name.to_string()),
                 encode_path(&instance_name.to_string()),
             );
-            let request = client.client.post(url).build()?;
+            let mut request = client.client.post(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -20098,7 +20098,7 @@ pub mod builder {
                 encode_path(&organization_name.to_string()),
                 encode_path(&project_name.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -20185,7 +20185,7 @@ pub mod builder {
                 encode_path(&organization_name.to_string()),
                 encode_path(&project_name.to_string()),
             );
-            let request = client.client.put(url).json(&body).build()?;
+            let mut request = client.client.put(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -20312,7 +20312,7 @@ pub mod builder {
             if let Some(v) = &sort_by {
                 query.push(("sort_by", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -20447,7 +20447,7 @@ pub mod builder {
                 encode_path(&organization_name.to_string()),
                 encode_path(&project_name.to_string()),
             );
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -20534,7 +20534,7 @@ pub mod builder {
                 encode_path(&project_name.to_string()),
                 encode_path(&snapshot_name.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -20621,7 +20621,7 @@ pub mod builder {
                 encode_path(&project_name.to_string()),
                 encode_path(&snapshot_name.to_string()),
             );
-            let request = client.client.delete(url).build()?;
+            let mut request = client.client.delete(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -20747,7 +20747,7 @@ pub mod builder {
             if let Some(v) = &sort_by {
                 query.push(("sort_by", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -20880,7 +20880,7 @@ pub mod builder {
                 encode_path(&organization_name.to_string()),
                 encode_path(&project_name.to_string()),
             );
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -20967,7 +20967,7 @@ pub mod builder {
                 encode_path(&project_name.to_string()),
                 encode_path(&vpc_name.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -21068,7 +21068,7 @@ pub mod builder {
                 encode_path(&project_name.to_string()),
                 encode_path(&vpc_name.to_string()),
             );
-            let request = client.client.put(url).json(&body).build()?;
+            let mut request = client.client.put(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -21155,7 +21155,7 @@ pub mod builder {
                 encode_path(&project_name.to_string()),
                 encode_path(&vpc_name.to_string()),
             );
-            let request = client.client.delete(url).build()?;
+            let mut request = client.client.delete(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -21244,7 +21244,7 @@ pub mod builder {
                 encode_path(&project_name.to_string()),
                 encode_path(&vpc_name.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -21347,7 +21347,7 @@ pub mod builder {
                 encode_path(&project_name.to_string()),
                 encode_path(&vpc_name.to_string()),
             );
-            let request = client.client.put(url).json(&body).build()?;
+            let mut request = client.client.put(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -21489,7 +21489,7 @@ pub mod builder {
             if let Some(v) = &sort_by {
                 query.push(("sort_by", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -21639,7 +21639,7 @@ pub mod builder {
                 encode_path(&project_name.to_string()),
                 encode_path(&vpc_name.to_string()),
             );
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -21741,7 +21741,7 @@ pub mod builder {
                 encode_path(&vpc_name.to_string()),
                 encode_path(&router_name.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -21857,7 +21857,7 @@ pub mod builder {
                 encode_path(&vpc_name.to_string()),
                 encode_path(&router_name.to_string()),
             );
-            let request = client.client.put(url).json(&body).build()?;
+            let mut request = client.client.put(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -21959,7 +21959,7 @@ pub mod builder {
                 encode_path(&vpc_name.to_string()),
                 encode_path(&router_name.to_string()),
             );
-            let request = client.client.delete(url).build()?;
+            let mut request = client.client.delete(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -22116,7 +22116,7 @@ pub mod builder {
             if let Some(v) = &sort_by {
                 query.push(("sort_by", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -22281,7 +22281,7 @@ pub mod builder {
                 encode_path(&vpc_name.to_string()),
                 encode_path(&router_name.to_string()),
             );
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -22398,7 +22398,7 @@ pub mod builder {
                 encode_path(&router_name.to_string()),
                 encode_path(&route_name.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -22529,7 +22529,7 @@ pub mod builder {
                 encode_path(&router_name.to_string()),
                 encode_path(&route_name.to_string()),
             );
-            let request = client.client.put(url).json(&body).build()?;
+            let mut request = client.client.put(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -22646,7 +22646,7 @@ pub mod builder {
                 encode_path(&router_name.to_string()),
                 encode_path(&route_name.to_string()),
             );
-            let request = client.client.delete(url).build()?;
+            let mut request = client.client.delete(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -22788,7 +22788,7 @@ pub mod builder {
             if let Some(v) = &sort_by {
                 query.push(("sort_by", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -22938,7 +22938,7 @@ pub mod builder {
                 encode_path(&project_name.to_string()),
                 encode_path(&vpc_name.to_string()),
             );
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -23040,7 +23040,7 @@ pub mod builder {
                 encode_path(&vpc_name.to_string()),
                 encode_path(&subnet_name.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -23156,7 +23156,7 @@ pub mod builder {
                 encode_path(&vpc_name.to_string()),
                 encode_path(&subnet_name.to_string()),
             );
-            let request = client.client.put(url).json(&body).build()?;
+            let mut request = client.client.put(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -23258,7 +23258,7 @@ pub mod builder {
                 encode_path(&vpc_name.to_string()),
                 encode_path(&subnet_name.to_string()),
             );
-            let request = client.client.delete(url).build()?;
+            let mut request = client.client.delete(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -23416,7 +23416,7 @@ pub mod builder {
             if let Some(v) = &sort_by {
                 query.push(("sort_by", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -23500,7 +23500,7 @@ pub mod builder {
         ) -> Result<ResponseValue<types::FleetRolePolicy>, Error<types::Error>> {
             let Self { client } = self;
             let url = format!("{}/policy", client.baseurl,);
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -23550,7 +23550,7 @@ pub mod builder {
             let Self { client, body } = self;
             let body = body.map_err(Error::InvalidRequest)?;
             let url = format!("{}/policy", client.baseurl,);
-            let request = client.client.put(url).json(&body).build()?;
+            let mut request = client.client.put(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -23625,7 +23625,7 @@ pub mod builder {
             if let Some(v) = &page_token {
                 query.push(("page_token", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -23723,7 +23723,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&role_name.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -23815,7 +23815,7 @@ pub mod builder {
             if let Some(v) = &sort_by {
                 query.push(("sort_by", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -23914,7 +23914,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&saga_id.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -23947,7 +23947,7 @@ pub mod builder {
         pub async fn send(self) -> Result<ResponseValue<types::User>, Error<types::Error>> {
             let Self { client } = self;
             let url = format!("{}/session/me", client.baseurl,);
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -24039,7 +24039,7 @@ pub mod builder {
             if let Some(v) = &sort_by {
                 query.push(("sort_by", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -24134,7 +24134,7 @@ pub mod builder {
             let Self { client, body } = self;
             let body = body.map_err(Error::InvalidRequest)?;
             let url = format!("{}/session/me/sshkeys", client.baseurl,);
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -24189,7 +24189,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&ssh_key_name.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -24244,7 +24244,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&ssh_key_name.to_string()),
             );
-            let request = client.client.delete(url).build()?;
+            let mut request = client.client.delete(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -24336,7 +24336,7 @@ pub mod builder {
             if let Some(v) = &sort_by {
                 query.push(("sort_by", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -24431,7 +24431,7 @@ pub mod builder {
             let Self { client, body } = self;
             let body = body.map_err(Error::InvalidRequest)?;
             let url = format!("{}/silos", client.baseurl,);
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -24483,7 +24483,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&silo_name.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -24535,7 +24535,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&silo_name.to_string()),
             );
-            let request = client.client.delete(url).build()?;
+            let mut request = client.client.delete(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -24646,7 +24646,7 @@ pub mod builder {
             if let Some(v) = &sort_by {
                 query.push(("sort_by", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -24747,7 +24747,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&silo_name.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -24818,7 +24818,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&silo_name.to_string()),
             );
-            let request = client.client.put(url).json(&body).build()?;
+            let mut request = client.client.put(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -24890,7 +24890,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&silo_name.to_string()),
             );
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -24963,7 +24963,7 @@ pub mod builder {
                 encode_path(&silo_name.to_string()),
                 encode_path(&provider_name.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -25055,7 +25055,7 @@ pub mod builder {
             if let Some(v) = &sort_by {
                 query.push(("sort_by", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -25154,7 +25154,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&user_name.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -25230,7 +25230,7 @@ pub mod builder {
             if let Some(v) = &page_token {
                 query.push(("page_token", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -25309,7 +25309,7 @@ pub mod builder {
         pub async fn send(self) -> Result<ResponseValue<()>, Error<types::Error>> {
             let Self { client } = self;
             let url = format!("{}/updates/refresh", client.baseurl,);
-            let request = client.client.post(url).build()?;
+            let mut request = client.client.post(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -25401,7 +25401,7 @@ pub mod builder {
             if let Some(v) = &sort_by {
                 query.push(("sort_by", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {

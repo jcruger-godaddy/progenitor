@@ -1518,7 +1518,7 @@ pub mod builder {
         pub async fn send(self) -> Result<ResponseValue<()>, Error<()>> {
             let Self { client } = self;
             let url = format!("{}/v1/control/hold", client.baseurl,);
-            let request = client.client.post(url).build()?;
+            let mut request = client.client.post(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -1545,7 +1545,7 @@ pub mod builder {
         pub async fn send(self) -> Result<ResponseValue<()>, Error<()>> {
             let Self { client } = self;
             let url = format!("{}/v1/control/resume", client.baseurl,);
-            let request = client.client.post(url).build()?;
+            let mut request = client.client.post(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -1591,7 +1591,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&task.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -1618,7 +1618,7 @@ pub mod builder {
         pub async fn send(self) -> Result<ResponseValue<Vec<types::Task>>, Error<()>> {
             let Self { client } = self;
             let url = format!("{}/v1/tasks", client.baseurl,);
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -1660,7 +1660,7 @@ pub mod builder {
             let Self { client, body } = self;
             let body = body.map_err(Error::InvalidRequest)?;
             let url = format!("{}/v1/tasks", client.baseurl,);
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -1728,7 +1728,7 @@ pub mod builder {
             if let Some(v) = &minseq {
                 query.push(("minseq", v.to_string()));
             }
-            let request = client.client.get(url).query(&query).build()?;
+            let mut request = client.client.get(url).query(&query).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -1774,7 +1774,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&task.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -1838,7 +1838,7 @@ pub mod builder {
                 encode_path(&task.to_string()),
                 encode_path(&output.to_string()),
             );
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -1880,7 +1880,7 @@ pub mod builder {
             let Self { client, body } = self;
             let body = body.map_err(Error::InvalidRequest)?;
             let url = format!("{}/v1/users", client.baseurl,);
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -1907,7 +1907,7 @@ pub mod builder {
         pub async fn send(self) -> Result<ResponseValue<types::WhoamiResult>, Error<()>> {
             let Self { client } = self;
             let url = format!("{}/v1/whoami", client.baseurl,);
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -1949,7 +1949,7 @@ pub mod builder {
             let Self { client, body } = self;
             let body = body.map_err(Error::InvalidRequest)?;
             let url = format!("{}/v1/worker/bootstrap", client.baseurl,);
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -1976,7 +1976,7 @@ pub mod builder {
         pub async fn send(self) -> Result<ResponseValue<types::WorkerPingResult>, Error<()>> {
             let Self { client } = self;
             let url = format!("{}/v1/worker/ping", client.baseurl,);
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -2035,7 +2035,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&task.to_string()),
             );
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -2094,7 +2094,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&task.to_string()),
             );
-            let request = client
+            let mut request = client
                 .client
                 .post(url)
                 .header(
@@ -2161,7 +2161,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&task.to_string()),
             );
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -2220,7 +2220,7 @@ pub mod builder {
                 client.baseurl,
                 encode_path(&task.to_string()),
             );
-            let request = client.client.post(url).json(&body).build()?;
+            let mut request = client.client.post(url).json(&body).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -2247,7 +2247,7 @@ pub mod builder {
         pub async fn send(self) -> Result<ResponseValue<types::WorkersResult>, Error<()>> {
             let Self { client } = self;
             let url = format!("{}/v1/workers", client.baseurl,);
-            let request = client.client.get(url).build()?;
+            let mut request = client.client.get(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
@@ -2274,7 +2274,7 @@ pub mod builder {
         pub async fn send(self) -> Result<ResponseValue<()>, Error<()>> {
             let Self { client } = self;
             let url = format!("{}/v1/workers/recycle", client.baseurl,);
-            let request = client.client.post(url).build()?;
+            let mut request = client.client.post(url).build()?;
             let result = client.client.execute(request).await;
             let response = result?;
             match response.status().as_u16() {
